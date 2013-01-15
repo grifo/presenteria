@@ -1,0 +1,26 @@
+# More info
+# https://help.github.com/articles/ignoring-files
+
+# Numerous always-ignore extensions
+*~
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+
+# jekyll
+_site/
+
+# node
+node_modules/
+
+# deploy
+deploy/
