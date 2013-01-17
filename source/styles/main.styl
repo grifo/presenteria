@@ -23,9 +23,6 @@ body
     font-family: font-default
     color: color-default
 
-#content
-    clear:both
-
 // -. .-. CATEGORY COLORS .-. .-.
 
 for category, i in categories
@@ -71,4 +68,24 @@ header
 // -. .-. NAV .-. .-.
 nav
     display: none
-    
+
+// -. .-. CONTENT .-. .-.
+
+#content
+    clear:both
+
+.gift
+    column: 4
+    display: inline-block
+    .vendor
+        float: right
+        hide-text()
+        width: 16px
+        height: 16px
+        margin-right: 5px
+        &.thinkgeek
+            background: url("../images/vendors/thinkgeek.png") no-repeat
+    .price
+        float: right
+    img
+        width: 100%;

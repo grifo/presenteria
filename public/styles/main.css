@@ -66,9 +66,6 @@ body {
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   color: #5b323e;
 }
-#content {
-  clear: both;
-}
 .category.man {
   color: #8b93b2;
 }
@@ -177,6 +174,34 @@ header .share li {
 }
 nav {
   display: none;
+}
+#content {
+  clear: both;
+}
+.gift {
+  float: left;
+  width: 22.916666666666668%;
+  margin-left: 1.0416666666666665%;
+  margin-right: 1.0416666666666665%;
+  display: inline-block;
+}
+.gift .vendor {
+  float: right;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+.gift .vendor.thinkgeek {
+  background: url("../images/vendors/thinkgeek.png") no-repeat;
+}
+.gift .price {
+  float: right;
+}
+.gift img {
+  width: 100%;
 }
 @-moz-viewport {
   width: device-width;
