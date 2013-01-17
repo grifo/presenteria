@@ -66,6 +66,9 @@ body {
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   color: #5b323e;
 }
+#content {
+  clear: both;
+}
 .category.man {
   color: #8b93b2;
 }
