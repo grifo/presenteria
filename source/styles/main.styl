@@ -20,12 +20,25 @@ body
     width: 960px
     margin: 0 auto
     background: #F5F5F5
+    font-family: font-default
+    color: color-default
 
 // -. .-. CATEGORY COLORS .-. .-.
 
 for category, i in categories
-    {".category-" + category[0]}
+    {".category." + category[0]}
         color: category[1]
+
+header, nav
+    .category
+        text-decoration: none
+        font-weight: 700
+        height: 1.3em
+        padding-bottom: -2px
+        display: inline-block
+    for category, i in categories
+        {".category." + category[0]}
+            border-bottom: 1px solid rgba(category[1], 20%)
 
 // -. .-. HEADER .-. .-.
 
@@ -35,14 +48,15 @@ header
         height: 100px
         margin: 50px 0
         replace-text: url(../images/presenteria.png)
+    .intro
+        float: right
+        text-align: right
+        line-height: 1.5
+    .category
+        font-size: 1.3em
 
 
 // -. .-. NAV .-. .-.
 nav
     display: none
-    a
-        text-decoration: none
-
-    for category, i in categories
-        {".category-" + category[0]}
-            border-bottom: 1px solid lighten(category[1], 20)
+    

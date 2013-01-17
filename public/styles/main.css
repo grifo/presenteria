@@ -63,24 +63,58 @@ body {
   width: 960px;
   margin: 0 auto;
   background: #f5f5f5;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  color: #5b323e;
 }
-.category-man {
+.category.man {
   color: #8b93b2;
 }
-.category-woman {
+.category.woman {
   color: #e06c76;
 }
-.category-geek {
+.category.geek {
   color: #fcac24;
 }
-.category-culture {
+.category.culture {
   color: #91517d;
 }
-.category-sport {
+.category.sport {
   color: #6abb8b;
 }
-.category-house {
+.category.house {
   color: #999;
+}
+header .category,
+nav .category {
+  text-decoration: none;
+  font-weight: 700;
+  height: 1.3em;
+  padding-bottom: -2px;
+  display: inline-block;
+}
+header .category.man,
+nav .category.man {
+  border-bottom: 1px solid rgba(139,147,178,0.2);
+}
+header .category.woman,
+nav .category.woman {
+  border-bottom: 1px solid rgba(224,108,118,0.2);
+}
+header .category.geek,
+nav .category.geek {
+  border-bottom: 1px solid rgba(252,172,36,0.2);
+}
+header .category.culture,
+nav .category.culture {
+  border-bottom: 1px solid rgba(145,81,125,0.2);
+}
+header .category.sport,
+nav .category.sport {
+  border-bottom: 1px solid rgba(106,187,139,0.2);
+}
+header .category.house,
+nav .category.house {
+  border-bottom: 1px solid rgba(153,153,153,0.2);
 }
 header h1 {
   float: left;
@@ -96,29 +130,16 @@ header h1 {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
+header .intro {
+  float: right;
+  text-align: right;
+  line-height: 1.5;
+}
+header .category {
+  font-size: 1.3em;
+}
 nav {
   display: none;
-}
-nav a {
-  text-decoration: none;
-}
-nav .category-man {
-  border-bottom: 1px solid #c8ccdb;
-}
-nav .category-woman {
-  border-bottom: 1px solid #f2c0c5;
-}
-nav .category-geek {
-  border-bottom: 1px solid #fdd289;
-}
-nav .category-culture {
-  border-bottom: 1px solid #be8aae;
-}
-nav .category-sport {
-  border-bottom: 1px solid #b0dbc2;
-}
-nav .category-house {
-  border-bottom: 1px solid #ccc;
 }
 @-moz-viewport {
   width: device-width;
