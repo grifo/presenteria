@@ -9,9 +9,40 @@
 @import "mixins.styl"
 @import "variables.styl"
 
+@import "grid.styl"
+
 // -. .-. SKIP LINKS .-. .-.
 #skiplinks
     vhidden()
 
 // -. .-. CORE .-. .-.
+body
+    width: 960px
+    margin: 0 auto
+    background: #F5F5F5
 
+// -. .-. CATEGORY COLORS .-. .-.
+
+for category, i in categories
+    {".category-" + category[0]}
+        color: category[1]
+
+// -. .-. HEADER .-. .-.
+
+header
+    h1
+        column: 5
+        height: 100px
+        margin: 50px 0
+        replace-text: url(../images/presenteria.png)
+
+
+// -. .-. NAV .-. .-.
+nav
+    display: none
+    a
+        text-decoration: none
+
+    for category, i in categories
+        {".category-" + category[0]}
+            border-bottom: 1px solid lighten(category[1], 20)

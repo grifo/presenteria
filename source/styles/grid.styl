@@ -1,0 +1,66 @@
+// .-. .-. .-. .-.
+// Semantic.gs // for Stylus: http://learnboost.github.com/stylus/
+// .-. .-. .-. .-.
+
+// Defaults which you can freely override
+$columnwidth = 40px
+$gutterwidth = 20px
+$columns = 16
+
+gridwidth($c = $columns)
+    ($columnwidth * $c) + ($gutterwidth * $c)
+
+// Set $gridtotalwidth to 100% for a fluid layout
+$gridtotalwidth = 100%
+
+gridtotalwidth($c = $columns)
+    if $gridtotalwidth is defined
+        $gridtotalwidth
+    else
+        unit(gridwidth($c), px)
+
+grid($c = $columns)
+    $gridtotalwidth = gridtotalwidth($c)
+    $gridwidth = gridwidth($c)
+    ($gridtotalwidth $gridwidth)
+
+gridprop($prop = margin)
+    if $prop
+        $prop + '-'
+    else
+        ''
+
+// .-. .-. GRID .-. .-.
+
+row($c = $columns, $prop = margin)
+    $grid = grid($c)
+    $prop = gridprop($prop)
+    if $grid[0] is 100%
+        $gap = $grid[0] * $gutterwidth * .5 / ($grid[1] - $gutterwidth)
+    else
+        $gap = $gutterwidth * .5
+    display: block
+    overflow: hidden
+    {$prop}left: - $gap
+    {$prop}right: - $gap
+
+hook($x, $c = $columns)
+    $grid = grid($c)
+    float: left
+    width: ($grid[0] * gridwidth($x) / $grid[1])
+
+column($x, $c = $columns, $prop = margin)
+    $grid = grid($c)
+    $gap = $grid[0] * ($gutterwidth * .5 / $grid[1])
+    $prop = gridprop($prop)
+    float: left
+    width: ($grid[0] * (gridwidth($x) - $gutterwidth) / $grid[1])
+    {$prop}left: $gap
+    {$prop}right: $gap
+
+offset($x, $c = $columns, $prop = margin)
+    $grid = grid($c)
+    $signal = (abs($x) / $x)
+    $prop = gridprop($prop)
+    {$prop}left: ($grid[0] * (gridwidth($x) + $gutterwidth * .5 * $signal) / $grid[1])
+
