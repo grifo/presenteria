@@ -99,25 +99,49 @@ header .category.man,
 nav .category.man {
   border-bottom: 1px solid rgba(139,147,178,0.2);
 }
+header .category.man:hover,
+nav .category.man:hover {
+  color: rgba(139,147,178,0.8);
+}
 header .category.woman,
 nav .category.woman {
   border-bottom: 1px solid rgba(224,108,118,0.2);
+}
+header .category.woman:hover,
+nav .category.woman:hover {
+  color: rgba(224,108,118,0.8);
 }
 header .category.geek,
 nav .category.geek {
   border-bottom: 1px solid rgba(252,172,36,0.2);
 }
+header .category.geek:hover,
+nav .category.geek:hover {
+  color: rgba(252,172,36,0.8);
+}
 header .category.culture,
 nav .category.culture {
   border-bottom: 1px solid rgba(145,81,125,0.2);
+}
+header .category.culture:hover,
+nav .category.culture:hover {
+  color: rgba(145,81,125,0.8);
 }
 header .category.sport,
 nav .category.sport {
   border-bottom: 1px solid rgba(106,187,139,0.2);
 }
+header .category.sport:hover,
+nav .category.sport:hover {
+  color: rgba(106,187,139,0.8);
+}
 header .category.house,
 nav .category.house {
   border-bottom: 1px solid rgba(153,153,153,0.2);
+}
+header .category.house:hover,
+nav .category.house:hover {
+  color: rgba(153,153,153,0.8);
 }
 header h1 {
   float: left;
@@ -133,13 +157,23 @@ header h1 {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-header .intro {
+header .side {
   float: right;
+}
+header .intro {
+  margin-top: 40px;
   text-align: right;
   line-height: 1.5;
 }
 header .category {
   font-size: 1.3em;
+}
+header .share {
+  margin-top: 20px;
+  float: right;
+}
+header .share li {
+  float: left;
 }
 nav {
   display: none;

@@ -42,6 +42,8 @@ header, nav
     for category, i in categories
         {".category." + category[0]}
             border-bottom: 1px solid rgba(category[1], 20%)
+            &:hover
+                color: rgba(category[1], 80%)
 
 // -. .-. HEADER .-. .-.
 
@@ -51,12 +53,19 @@ header
         height: 100px
         margin: 50px 0
         replace-text: url(../images/presenteria.png)
-    .intro
+    .side
         float: right
+    .intro
+        margin-top: 40px
         text-align: right
         line-height: 1.5
     .category
         font-size: 1.3em
+    .share
+        margin-top: 20px
+        float: right
+        li
+            float: left
 
 
 // -. .-. NAV .-. .-.
