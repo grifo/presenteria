@@ -66,78 +66,79 @@ body {
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   color: #5b323e;
 }
-.category.man {
+.tag.man {
   color: #8b93b2;
 }
-.category.woman {
+.tag.woman {
   color: #e06c76;
 }
-.category.geek {
+.tag.geek {
   color: #fcac24;
 }
-.category.culture {
+.tag.culture {
   color: #91517d;
 }
-.category.sport {
+.tag.sport {
   color: #6abb8b;
 }
-.category.house {
+.tag.house {
   color: #999;
 }
-header .category,
-nav .category {
+header .tag.man,
+nav .tag.man {
+  border-bottom-color: rgba(139,147,178,0.3);
+}
+header .tag.woman,
+nav .tag.woman {
+  border-bottom-color: rgba(224,108,118,0.3);
+}
+header .tag.geek,
+nav .tag.geek {
+  border-bottom-color: rgba(252,172,36,0.3);
+}
+header .tag.culture,
+nav .tag.culture {
+  border-bottom-color: rgba(145,81,125,0.3);
+}
+header .tag.sport,
+nav .tag.sport {
+  border-bottom-color: rgba(106,187,139,0.3);
+}
+header .tag.house,
+nav .tag.house {
+  border-bottom-color: rgba(153,153,153,0.3);
+}
+header .tag,
+nav .tag {
   text-decoration: none;
   font-weight: 700;
   height: 1.3em;
   padding-bottom: -2px;
   display: inline-block;
+  border-bottom: 1px solid;
 }
-header .category.man,
-nav .category.man {
-  border-bottom: 1px solid rgba(139,147,178,0.2);
-}
-header .category.man:hover,
-nav .category.man:hover {
+header .tag.man:hover,
+nav .tag.man:hover {
   color: rgba(139,147,178,0.8);
 }
-header .category.woman,
-nav .category.woman {
-  border-bottom: 1px solid rgba(224,108,118,0.2);
-}
-header .category.woman:hover,
-nav .category.woman:hover {
+header .tag.woman:hover,
+nav .tag.woman:hover {
   color: rgba(224,108,118,0.8);
 }
-header .category.geek,
-nav .category.geek {
-  border-bottom: 1px solid rgba(252,172,36,0.2);
-}
-header .category.geek:hover,
-nav .category.geek:hover {
+header .tag.geek:hover,
+nav .tag.geek:hover {
   color: rgba(252,172,36,0.8);
 }
-header .category.culture,
-nav .category.culture {
-  border-bottom: 1px solid rgba(145,81,125,0.2);
-}
-header .category.culture:hover,
-nav .category.culture:hover {
+header .tag.culture:hover,
+nav .tag.culture:hover {
   color: rgba(145,81,125,0.8);
 }
-header .category.sport,
-nav .category.sport {
-  border-bottom: 1px solid rgba(106,187,139,0.2);
-}
-header .category.sport:hover,
-nav .category.sport:hover {
+header .tag.sport:hover,
+nav .tag.sport:hover {
   color: rgba(106,187,139,0.8);
 }
-header .category.house,
-nav .category.house {
-  border-bottom: 1px solid rgba(153,153,153,0.2);
-}
-header .category.house:hover,
-nav .category.house:hover {
+header .tag.house:hover,
+nav .tag.house:hover {
   color: rgba(153,153,153,0.8);
 }
 header h1 {
@@ -156,13 +157,14 @@ header h1 {
 }
 header .side {
   float: right;
+  font-size: 1.1em;
 }
 header .intro {
   margin-top: 40px;
   text-align: right;
   line-height: 1.5;
 }
-header .category {
+header .tag {
   font-size: 1.3em;
 }
 header .share {
@@ -183,22 +185,33 @@ nav {
   width: 22.916666666666668%;
   margin-left: 1.0416666666666665%;
   margin-right: 1.0416666666666665%;
-  display: inline-block;
+  position: relative;
+}
+.gift .product {
+  color: #5b323e;
+  text-decoration: none;
+}
+.gift img {
+  width: 100%;
 }
 .gift .vendor {
   float: right;
+}
+.gift .store {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
+  display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 5px;
+  margin-right: 2px;
 }
-.gift .vendor.thinkgeek {
-  background: url("../images/vendors/thinkgeek.png") no-repeat;
+.gift .store.thinkgeek {
+  background: url("../images/vendors/thinkgeek.png");
 }
 .gift .price {
-  float: right;
+  display: inline-block;
+  font-weight: 700;
 }
 .gift .photo {
   background-color: #fff;
@@ -206,45 +219,82 @@ nav {
   position: relative;
   margin-bottom: 1em;
 }
-.gift .photo:before,
-.gift .photo:after {
+.gift .tags {
   position: absolute;
-  width: 40%;
-  height: 10px;
-  content: ' ';
-  left: 12px;
-  bottom: 12px;
-  background: transparent;
-  -webkit-transform: skew(-5deg) rotate(-5deg);
-  -moz-transform: skew(-5deg) rotate(-5deg);
-  -ms-transform: skew(-5deg) rotate(-5deg);
-  -o-transform: skew(-5deg) rotate(-5deg);
-  -webkit-transform: skew(-5deg) rotate(-5deg);
-  -moz-transform: skew(-5deg) rotate(-5deg);
-  -o-transform: skew(-5deg) rotate(-5deg);
-  -ms-transform: skew(-5deg) rotate(-5deg);
-  transform: skew(-5deg) rotate(-5deg);
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  z-index: -1;
+  top: 4px;
+  left: 4px;
 }
-.gift .photo:after {
-  left: auto;
-  right: 12px;
-  -webkit-transform: skew(5deg) rotate(5deg);
-  -moz-transform: skew(5deg) rotate(5deg);
-  -ms-transform: skew(5deg) rotate(5deg);
-  -o-transform: skew(5deg) rotate(5deg);
-  -webkit-transform: skew(5deg) rotate(5deg);
-  -moz-transform: skew(5deg) rotate(5deg);
-  -o-transform: skew(5deg) rotate(5deg);
-  -ms-transform: skew(5deg) rotate(5deg);
-  transform: skew(5deg) rotate(5deg);
+.gift .tags li {
+  float: left;
+  margin-right: 3px;
 }
-.gift .photo img {
-  width: 100%;
+.gift .tag {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 6px;
+  height: 6px;
+  overflow: hidden;
+  text-decoration: none;
+}
+.gift .tag.man {
+  background: #8b93b2;
+}
+.gift .tag.woman {
+  background: #e06c76;
+}
+.gift .tag.geek {
+  background: #fcac24;
+}
+.gift .tag.culture {
+  background: #91517d;
+}
+.gift .tag.sport {
+  background: #6abb8b;
+}
+.gift .tag.house {
+  background: #999;
+}
+.gift:hover .photo {
+  z-index: 100;
+}
+.gift:hover .tags {
+  -webkit-transition: top 0.1s ease-out;
+  -moz-transition: top 0.1s ease-out;
+  -o-transition: top 0.1s ease-out;
+  -ms-transition: top 0.1s ease-out;
+  transition: top 0.1s ease-out;
+  top: -28px;
+}
+.gift:hover .tag {
+  -webkit-transition: height 0.1s ease-out;
+  -moz-transition: height 0.1s ease-out;
+  -o-transition: height 0.1s ease-out;
+  -ms-transition: height 0.1s ease-out;
+  transition: height 0.1s ease-out;
+  height: 28px;
+  width: auto;
+  line-height: 28px;
+  font-size: 1em;
+  padding: 0 10px;
+}
+.gift:hover .tag.man {
+  background: rgba(139,147,178,0.2);
+}
+.gift:hover .tag.woman {
+  background: rgba(224,108,118,0.2);
+}
+.gift:hover .tag.geek {
+  background: rgba(252,172,36,0.2);
+}
+.gift:hover .tag.culture {
+  background: rgba(145,81,125,0.2);
+}
+.gift:hover .tag.sport {
+  background: rgba(106,187,139,0.2);
+}
+.gift:hover .tag.house {
+  background: rgba(153,153,153,0.2);
 }
 @-moz-viewport {
   width: device-width;

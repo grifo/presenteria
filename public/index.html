@@ -42,9 +42,9 @@
         <h1 class="logo">Presenteria</h1>
         <div class="side">
             <p class="intro">
-                Quem você quer presentear? <a href="/homem" class="category man">Homem</a> ou <a href="/mulher" class="category woman">Mulher</a>?<br>
-                Já sei, seu amigo é <a href="/geek" class="category geek">Geek</a>? Gosta de <a href="/cultura" class="category culture">Cultura</a>?<br>
-                Pratica <a href="/esporte" class="category sport">Esporte</a> ou prefere ficar em <a href="/casa" class="category house">Casa</a>?          
+                Quem você quer presentear? <a href="/homem" class="tag man">Homem</a> ou <a href="/mulher" class="tag woman">Mulher</a>?<br>
+                Já sei, seu amigo é <a href="/geek" class="tag geek">Geek</a>? Gosta de <a href="/cultura" class="tag culture">Cultura</a>?<br>
+                Pratica <a href="/esporte" class="tag sport">Esporte</a> ou prefere ficar em <a href="/casa" class="tag house">Casa</a>?          
             </p>
             <ul class="share">
                 <li class="twitter">
@@ -60,29 +60,34 @@
     
     <nav>
         <ul id="nav" role="navigation">
-            <li><a href="/homem" class="category man">Homem</a></li>
-            <li><a href="/mulher" class="category woman">Mulher</a></li>
-            <li><a href="/geek" class="category geek">Geek</a></li>
-            <li><a href="/cultura" class="category culture">Cultura</a></li>
-            <li><a href="/esporte" class="category sport">Esporte</a></li>
-            <li><a href="/casa" class="category house">Casa</a></li>
+            <li><a href="/homem" class="tag man">Homem</a></li>
+            <li><a href="/mulher" class="tag woman">Mulher</a></li>
+            <li><a href="/geek" class="tag geek">Geek</a></li>
+            <li><a href="/cultura" class="tag culture">Cultura</a></li>
+            <li><a href="/esporte" class="tag sport">Esporte</a></li>
+            <li><a href="/casa" class="tag house">Casa</a></li>
         </ul>
     </nav>
     
     <div id="content">
+    
         <div class="gift">
-            <a href="http://www.thinkgeek.com/product/ede2/" rel="external">
+            <a class="product" href="http://www.thinkgeek.com/product/ede2/" rel="external">
                 <div class="photo">
                     <img src="images/products/001.png" alt="Boneco Creeper"/>
                 </div>
                 <span class="description">Boneco Creeper</span>
-                <span class="price">$59,99</span>
-                <span class="vendor thinkgeek">ThinkGeek</span>
+                <div class="vendor">
+                    <span class="store thinkgeek">ThinkGeek</span>
+                    <span class="price">$59,99</span>
+                </div>
             </a>
             <ul class="tags">
-                <li class="geek"><a href="/geek">Geek</a></li>
+                <li><a href="/geek" class="tag geek">Geek</a></li>
+                <li><a href="/casa" class="tag house">Casa</a></li>
             </ul>
         </div>
+        
     </div>
 
     <script src="scripts/main.js"></script>
