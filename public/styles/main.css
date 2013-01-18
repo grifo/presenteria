@@ -201,21 +201,25 @@ nav {
   background: #fff;
   position: relative;
   border-top: 5px solid #fff;
-  border-bottom: 5px solid #fff;
   -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
   box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  border-bottom-right-radius: 42px;
+  overflow: hidden;
+/*&:after
+            left: auto
+            right: 12px
+            transform: skew(5deg) rotate(5deg)*/
 }
 .gift .photo img {
   width: 100%;
 }
-.gift .photo:before,
-.gift .photo:after {
+.gift .photo:before {
   position: absolute;
   width: 40%;
   height: 10px;
   content: '';
   left: 12px;
-  bottom: 6px;
+  bottom: 3px;
   -webkit-transform: skew(-5deg) rotate(-5deg);
   -moz-transform: skew(-5deg) rotate(-5deg);
   -o-transform: skew(-5deg) rotate(-5deg);
@@ -226,13 +230,22 @@ nav {
   z-index: -1000;
 }
 .gift .photo:after {
-  left: auto;
-  right: 12px;
-  -webkit-transform: skew(5deg) rotate(5deg);
-  -moz-transform: skew(5deg) rotate(5deg);
-  -o-transform: skew(5deg) rotate(5deg);
-  -ms-transform: skew(5deg) rotate(5deg);
-  transform: skew(5deg) rotate(5deg);
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  content: '';
+  width: 23px;
+  height: 23px;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #efefef;
+  z-index: 1001;
+  -webkit-box-shadow: -2px -2px 2px rgba(0,0,0,0.05);
+  box-shadow: -2px -2px 2px rgba(0,0,0,0.05);
+  -webkit-transform: skew(-30deg) translate(-8px, -5px) rotate(-23deg);
+  -moz-transform: skew(-30deg) translate(-8px, -5px) rotate(-23deg);
+  -o-transform: skew(-30deg) translate(-8px, -5px) rotate(-23deg);
+  -ms-transform: skew(-30deg) translate(-8px, -5px) rotate(-23deg);
+  transform: skew(-30deg) translate(-8px, -5px) rotate(-23deg);
 }
 .gift .description,
 .gift .vendor {
