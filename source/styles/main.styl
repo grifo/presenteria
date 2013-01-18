@@ -79,15 +79,15 @@ nav
     .product
         color: color-default
         display: block
-        overflow: hidden
         text-decoration: none
+        position: relative
     .photo
         background: white
         position: relative
         img
             width: 100%
     .description, .vendor
-        margin-top: 6px        
+        margin-top: 8px        
     .description
         display: inline-block
     .vendor
@@ -123,7 +123,7 @@ nav
     tags-color-in-prop(background)
 
     &:hover
-        .photo
+        .product
             z-index: 100
         .tags
             transition: top .1s ease-out
