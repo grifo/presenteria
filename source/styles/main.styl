@@ -78,9 +78,18 @@ nav
     position: relative
     .product
         color: color-default
+        display: block
+        overflow: hidden
         text-decoration: none
-    img
-        width: 100%
+    .photo
+        background: white
+        position: relative
+        img
+            width: 100%
+    .description, .vendor
+        margin-top: 6px        
+    .description
+        display: inline-block
     .vendor
         float: right
     .store
@@ -93,12 +102,7 @@ nav
             background: url('../images/vendors/thinkgeek.png')
     .price
         display: inline-block
-        font-weight: 700       
-    .photo
-        background-color: white
-        width: 100%
-        position: relative
-        margin-bottom: 1em
+        font-weight: 700
 
     .tags
         position: absolute
@@ -124,6 +128,7 @@ nav
         .tags
             transition: top .1s ease-out
             top: -28px
+            left: 0
 
         .tag
             transition: height .1s ease-out

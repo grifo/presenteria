@@ -190,10 +190,23 @@ nav {
 }
 .gift .product {
   color: #5b323e;
+  display: block;
+  overflow: hidden;
   text-decoration: none;
 }
-.gift img {
+.gift .photo {
+  background: #fff;
+  position: relative;
+}
+.gift .photo img {
   width: 100%;
+}
+.gift .description,
+.gift .vendor {
+  margin-top: 6px;
+}
+.gift .description {
+  display: inline-block;
 }
 .gift .vendor {
   float: right;
@@ -213,12 +226,6 @@ nav {
 .gift .price {
   display: inline-block;
   font-weight: 700;
-}
-.gift .photo {
-  background-color: #fff;
-  width: 100%;
-  position: relative;
-  margin-bottom: 1em;
 }
 .gift .tags {
   position: absolute;
@@ -266,6 +273,7 @@ nav {
   -ms-transition: top 0.1s ease-out;
   transition: top 0.1s ease-out;
   top: -28px;
+  left: 0;
 }
 .gift:hover .tag {
   -webkit-transition: height 0.1s ease-out;
