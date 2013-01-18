@@ -2,7 +2,7 @@ vhidden()
     position: absolute
     left: -9999px
 
-tags-color-in-prop(prop, alpha = 1)
+tags-color-in-prop(prop, alpha = 1, sufix = '')
     for tag, i in tags
-        {'.tag.' + tag[0]}
+        {'.tag.' + tag[0] + sufix}
             {prop}: rgba(tag[1], alpha)

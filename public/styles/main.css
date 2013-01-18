@@ -147,7 +147,8 @@ header h1 {
   margin-left: 1.0416666666666665%;
   margin-right: 1.0416666666666665%;
   height: 100px;
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
@@ -278,6 +279,9 @@ nav {
   font-size: 1em;
   padding: 0 10px;
 }
+.gift:hover .tag:hover {
+  color: #fff;
+}
 .gift:hover .tag.man {
   background: rgba(139,147,178,0.2);
 }
@@ -295,6 +299,24 @@ nav {
 }
 .gift:hover .tag.house {
   background: rgba(153,153,153,0.2);
+}
+.gift:hover .tag.man:hover {
+  background: #8b93b2;
+}
+.gift:hover .tag.woman:hover {
+  background: #e06c76;
+}
+.gift:hover .tag.geek:hover {
+  background: #fcac24;
+}
+.gift:hover .tag.culture:hover {
+  background: #91517d;
+}
+.gift:hover .tag.sport:hover {
+  background: #6abb8b;
+}
+.gift:hover .tag.house:hover {
+  background: #999;
 }
 @-moz-viewport {
   width: device-width;

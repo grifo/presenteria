@@ -36,9 +36,8 @@ header, nav
         padding-bottom: -2px
         display: inline-block
         border-bottom: 1px solid
-        for tag, i in tags
-            {'&.' + tag[0] + ':hover'}
-                 color: rgba(tag[1], 80%)
+
+    tags-color-in-prop(color, .8, ':hover')
 
 // -. .-. HEADER .-. .-.
 
@@ -46,7 +45,8 @@ header
     h1
         column: 5
         height: 100px
-        margin: 50px 0
+        margin-top: 50px
+        margin-bottom: 50px
         replace-text: url('../images/presenteria.png')
     .side
         float: right
@@ -132,8 +132,11 @@ nav
             line-height: 28px
             font-size: 1em
             padding: 0 10px
+            &:hover
+                color: white
 
         tags-color-in-prop(background, .2)
+        tags-color-in-prop(background, 1, ':hover')
 
 
 
