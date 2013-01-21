@@ -1,0 +1,38 @@
+
+// -. .-. NAVIGATION .-. .-.
+
+.navigation
+    transition: .2s top ease-out
+    fixed: top 0 left 0
+    z-index: 1000
+    width: 100%
+    height: 74px
+    background: rgba(white, .98)
+    box-shadow: 0 4px 2px rgba(black, .08)
+    &.hide
+        top: -80px
+    .home
+        column: 4
+        absolute: top 10px left 0
+        line-height: 50px
+        replace-text: url('../images/presenteria-pocket.png')
+    nav
+        position: relative
+        width: 960px
+        margin: 0 auto
+    ul
+        float: right
+        padding-top: 22px
+        li
+            float: left 
+    .tag
+        margin: 0 (gutterwidth * .5)
+        font-size: 1em
+
+    // ACTIVE
+    .active
+        border: none
+        height: 1.6em
+        padding: 0 (gutterwidth * .25)
+        margin: 0 (gutterwidth * .25)
+    tags-color-in-prop(background, .2, '.active')

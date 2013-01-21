@@ -11,7 +11,7 @@ task 'dev', ->
 task 'build:scripts', ->
     bundle [
         'source/scripts/rye-0.0.1.js'
-        'source/scripts/main.coffee'
+        'source/scripts/navigation.js'
     ], 'public/scripts/main.js'
 
 
