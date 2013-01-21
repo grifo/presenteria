@@ -3,64 +3,55 @@
 // .-. .-. .-. .-.
 
 // Defaults which you can freely override
-$columnwidth = 40px
-$gutterwidth = 20px
-$columns = 16
+columnwidth = 40px
+gutterwidth = 20px
+columns     = 16
+// fluid       = true
 
-gridwidth($c = $columns)
-    ($columnwidth * $c) + ($gutterwidth * $c)
+// .-. .-. MIXINS .-. .-.
 
-// Set $gridtotalwidth to 100% for a fluid layout
-$gridtotalwidth = 100%
+_grid(c = columns)
+    (columnwidth * c) + (gutterwidth * c)
 
-gridtotalwidth($c = $columns)
-    if $gridtotalwidth is defined
-        $gridtotalwidth
+_gridtotal(c = columns)
+    if fluid is defined
+        100%
     else
-        unit(gridwidth($c), px)
+        _grid(c)
 
-grid($c = $columns)
-    $gridtotalwidth = gridtotalwidth($c)
-    $gridwidth = gridwidth($c)
-    ($gridtotalwidth $gridwidth)
-
-gridprop($prop = margin)
-    if $prop
-        $prop + '-'
+_gridprop(prop = margin)
+    if prop
+        prop + '-'
     else
         ''
 
 // .-. .-. GRID .-. .-.
 
-row($c = $columns, $prop = margin)
-    $grid = grid($c)
-    $prop = gridprop($prop)
-    if $grid[0] is 100%
-        $gap = $grid[0] * $gutterwidth * .5 / ($grid[1] - $gutterwidth)
+row(c = columns, prop = margin)
+    if fluid is defined
+        gap = _gridtotal(c) * gutterwidth * .5 / (_grid(c) - gutterwidth)
     else
-        $gap = $gutterwidth * .5
+        gap = gutterwidth * .5
     display: block
     overflow: hidden
-    {$prop}left: - $gap
-    {$prop}right: - $gap
+    prop = _gridprop(prop)
+    {prop}left: - gap
+    {prop}right: - gap
 
-hook($x, $c = $columns)
-    $grid = grid($c)
+hook(x, c = columns)
     float: left
-    width: ($grid[0] * gridwidth($x) / $grid[1])
+    width: (_gridtotal(c) * _grid(x) / _grid(c))
 
-column($x, $c = $columns, $prop = margin)
-    $grid = grid($c)
-    $gap = $grid[0] * ($gutterwidth * .5 / $grid[1])
-    $prop = gridprop($prop)
+column(x, c = columns, prop = margin)
+    gap = _gridtotal(c) * (gutterwidth * .5 / _grid(c))
+    prop = _gridprop(prop)
     float: left
-    width: ($grid[0] * (gridwidth($x) - $gutterwidth) / $grid[1])
-    {$prop}left: $gap
-    {$prop}right: $gap
+    width: (_gridtotal(c) * (_grid(x) - gutterwidth) / _grid(c))
+    {prop}left: gap
+    {prop}right: gap
 
-offset($x, $c = $columns, $prop = margin)
-    $grid = grid($c)
-    $signal = (abs($x) / $x)
-    $prop = gridprop($prop)
-    {$prop}left: ($grid[0] * (gridwidth($x) + $gutterwidth * .5 * $signal) / $grid[1])
+offset(x, c = columns, prop = margin)
+    signal = (abs(x) / x)
+    prop = _gridprop(prop)
+    {prop}left: (_gridtotal(c) * (_grid(x) + gutterwidth * .5 * signal) / _grid(c))
 
