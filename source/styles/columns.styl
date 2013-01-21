@@ -1,11 +1,7 @@
 .column
     float: left
 
-.four-columns .column
-    column: 4
 
-.three-columms .column
-    column: 3
-
-.two-columms .column
-    column: 3
+for n in 4 3 2
+    .columns-{n} .column
+        column: n
