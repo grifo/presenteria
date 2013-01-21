@@ -13,28 +13,29 @@
         z-index: -1
         width: 50%
         height: 100px
-        bottom: 6px
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+        bottom: 8px
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15)
     &:before
-        right: 10px
+        right: 13px
         transform: rotate(5deg) skew(5deg)
     &:after
-        left: 10px
+        left: 13px
         transform: rotate(-5deg) skew(-5deg)
 
 // -. .-. CORNERS .-. .-.
 
-corners = bottom  right  before  -16deg, 
+corners = bottom  right  after   -16deg, 
           top     right  before  -106deg, 
           bottom  left   after    76deg
 
 for corner in corners
     c = corner[0] + '-' + corner[1]
     {'.corner-' + c}
-        {'border-' + c + '-radius'}: 36px // yes!!!!11ONEONE!1
+        {'border-' + c + '-radius'}: 36px
         img
             {'border-' + c + '-radius'}: 36px
         {'&:' + corner[2]}
+            left: auto
             {corner[0]}: 1px
             {corner[1]}: 3px
             width: 16px
