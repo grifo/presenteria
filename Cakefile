@@ -12,6 +12,7 @@ task 'build:scripts', ->
     bundle [
         'source/scripts/rye-0.0.1.js'
         'source/scripts/navigation.js'
+        'source/scripts/columns.js'
     ], 'public/scripts/main.js'
 
 
