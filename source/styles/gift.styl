@@ -4,6 +4,8 @@
 .gift
     column: 4
     position: relative
+    margin-bottom: 35px
+
     .product
         color: color-default
         display: block
@@ -11,19 +13,24 @@
         position: relative
 
     .description, .vendor
-        margin-top: 10px        
+        margin-top: 10px
     .description
         display: inline-block
-    
+        font-size: 13px
+        line-height: 1.3
+        margin-left: 10px
+        margin-right: 10px    
     .vendor
-        float: right
+        margin-left: 10px
+
     .store, .price
         vertical-align: top
     .store
         margin-right: 2px
     .price
         display: inline-block
-        font-weight: 700
+        font-weight: bold
+        font-size: 14px
 
     .tags
         position: absolute
@@ -48,15 +55,15 @@
             z-index: 100
         .tags
             transition: top .1s ease-out
-            top: -28px
+            top: -24px
             left: 0
 
         .tag
             transition: height .1s ease-out
-            height: 28px
+            height: 24px
             width: auto
-            line-height: 28px
-            font-size: 1em
+            line-height: 24px
+            font-size: 10px
             padding: 0 10px
             &:hover
                 color: white
