@@ -1501,7 +1501,7 @@ Rye.define('Request', function(){
 
         navigation.toggleClass('hide', hide)
 
-        if(offtop > height - (viewport*2)){
+        if(offtop > height - (viewport * 2)){
         	$.publish('scrolledBottom')
         }
     })
@@ -1536,10 +1536,16 @@ Rye.define('Request', function(){
 
 
     function Architect (number) {
+        var dat = this
         this.cols = []
+
         while (number--) {
             this.cols.push(new Column())
         }
+
+        $.subscribe('scrolledBottom', function(){
+            dat.getMoreElements()
+        })
     }
     Architect.prototype.appendTo = function (container) {
         this.cols.forEach(function(col){
@@ -1557,6 +1563,9 @@ Rye.define('Request', function(){
         this.cols.sort(function(a, b){
             return a - b
         })
+    }
+    Architect.prototype.getMoreElements = function () {
+        //do stuff
     }
 
 

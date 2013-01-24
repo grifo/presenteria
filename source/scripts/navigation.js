@@ -10,7 +10,7 @@
 
         navigation.toggleClass('hide', hide)
 
-        if(offtop > height - (viewport*2)){
+        if(offtop > height - (viewport * 2)){
         	$.publish('scrolledBottom')
         }
     })

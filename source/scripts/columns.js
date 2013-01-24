@@ -27,10 +27,16 @@
 
 
     function Architect (number) {
+        var dat = this
         this.cols = []
+
         while (number--) {
             this.cols.push(new Column())
         }
+
+        $.subscribe('scrolledBottom', function(){
+            dat.getMoreElements()
+        })
     }
     Architect.prototype.appendTo = function (container) {
         this.cols.forEach(function(col){
@@ -48,6 +54,9 @@
         this.cols.sort(function(a, b){
             return a - b
         })
+    }
+    Architect.prototype.getMoreElements = function () {
+        //do stuff
     }
 
 
